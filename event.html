@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>eventParsing</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    body영역
+    <main>
+        main영역
+        <div>
+            div영역
+            <p>
+                P영역
+                <span>span 영역</span>
+            </p>
+        </div>
+    </main>
+    <script>
+        const $body = document.querySelector('body');
+        const $main = document.querySelector('main');
+        const $div = document.querySelector('div');
+        const $p = document.querySelector('p');
+        const $span = document.querySelector('span');
+
+        //addEventListener의 2번쨰 파라미터의 default는 false로 false의 경우 이벤트 버블링
+        $body.addEventListener('click', function() {
+            console.log("body 태그");
+        })
+        $main.addEventListener('click', function() {
+            console.log("main 태그");
+        })
+        $div.addEventListener('click', function() {
+            console.log("div 태그");
+        })
+        $p.addEventListener('click', function() {
+            console.log("p 태그");
+        })
+        $span.addEventListener('click', function() {
+            console.log("span 태그");
+        })
+
+        //addEventLister의 2번째 파라미터가 true일 경우 이벤크 캡쳐링
+        /*
+        EventPhase() : 0 최상위 객체, 1 이벤트 캡쳐링 단계, 2 타켓, 3 이벤트 버블링
+        */
+    </script>
+</body>
+</html>
